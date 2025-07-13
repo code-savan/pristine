@@ -14,6 +14,7 @@ const ContactUs = () => {
         fill
         className="object-cover object-center z-0"
         priority
+        unoptimized={true}
       />
       {/* Overlay for content readability */}
       <div className="absolute inset-0 bg-black/10 z-10" />

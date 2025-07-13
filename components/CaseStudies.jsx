@@ -55,6 +55,7 @@ const CaseStudies = () => {
                       className="object-contain object-center"
                       sizes="(max-width: 768px) 90vw, 33vw"
                       priority={idx === 0}
+                      unoptimized={true}
                     />
                   </div>
                 </div>

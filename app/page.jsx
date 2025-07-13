@@ -12,7 +12,7 @@ export default function Home() {
   <div>
     <Hero />
     <div className="mx-[10px]">
-        <Image className="w-full" src="/heroimage.png" alt="Hero" width={1000} height={1000} />
+        <Image unoptimized={true} className="w-full" src="/heroimage.png" alt="Hero" width={1000} height={1000} />
     </div>
     <Partners />
     <Services />

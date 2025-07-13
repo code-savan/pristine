@@ -56,6 +56,7 @@ const Services = () => {
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority={idx === 0}
+                  unoptimized={true}
                 />
               </div>
             </div>

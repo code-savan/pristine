@@ -16,6 +16,7 @@ const Partners = () => {
           height={120}
           className="w-auto h-20 md:h-28 object-contain"
           priority
+          unoptimized={true}
         />
       </div>
     </section>
