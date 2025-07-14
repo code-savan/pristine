@@ -1,6 +1,39 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
+import { toast } from "sonner";
 
 const ContactUs = () => {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        toast.success("Message sent successfully!");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        toast.error(data.error || "Failed to send message.");
+      }
+    } catch (err) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <section
       className="w-full min-h-screen flex items-center justify-center relative"
@@ -31,7 +64,7 @@ const ContactUs = () => {
           </p>
         </div>
         {/* Right: Contact Form */}
-        <form className="flex-1 min-w-[320px] max-w-lg bg-transparent flex flex-col gap-6">
+        <form className="flex-1 min-w-[320px] max-w-lg bg-transparent flex flex-col gap-6" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name" className="block text-white text-sm mb-2">Name</label>
             <input
@@ -40,6 +73,9 @@ const ContactUs = () => {
               type="text"
               placeholder="John doe"
               className="w-full px-4 py-3 rounded-md bg-white text-zinc-900 border-none outline-none text-base font-normal"
+              value={form.name}
+              onChange={handleChange}
+              required
             />
           </div>
           <div>
@@ -50,6 +86,9 @@ const ContactUs = () => {
               type="email"
               placeholder="johndoe@gmail.com"
               className="w-full px-4 py-3 rounded-md bg-white text-zinc-900 border-none outline-none text-base font-normal"
+              value={form.email}
+              onChange={handleChange}
+              required
             />
           </div>
           <div>
@@ -60,13 +99,17 @@ const ContactUs = () => {
               placeholder="Leave a message"
               rows={4}
               className="w-full px-4 py-3 rounded-md bg-white text-zinc-900 border-none outline-none text-base font-normal resize-none"
+              value={form.message}
+              onChange={handleChange}
+              required
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-[#1E1E1E] text-white py-4 rounded-md text-lg font-normal mt-4 hover:bg-zinc-800 transition-colors"
+            className="w-full bg-[#1E1E1E] text-white py-4 rounded-md text-lg font-normal mt-4 hover:bg-zinc-800 transition-colors disabled:opacity-60"
+            disabled={submitting}
           >
-            Contact us
+            {submitting ? "Sending..." : "Contact us"}
           </button>
         </form>
       </div>
