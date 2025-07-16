@@ -7,7 +7,7 @@ export async function POST(req) {
       return new Response(JSON.stringify({ error: 'All fields are required.' }), { status: 400 });
     }
 
-    const resend = new Resend(process.env.RESEND_APIKEY);
+    const resend = new Resend("re_fh1mvBQD_MMjADjyKP3W3dhJq4sT46dRb");
     const { data, error } = await resend.emails.send({
       from: 'no-reply@pristinetechsolutions.com.ng',
       to: 'admin@pristinetechsolutions.com.ng',
