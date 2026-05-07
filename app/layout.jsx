@@ -1,16 +1,6 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./fonts.css";
 import { Toaster } from "sonner";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Pristine Tech | Built to the Highest Standard",
@@ -18,12 +8,9 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // Apply Geist font variables to <html> for global font usage
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en">
+      <body className="antialiased">
         {children}
         <Toaster />
       </body>
