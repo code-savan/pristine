@@ -19,7 +19,8 @@ const Footer = () => {
           <a href="#home" className="text-white text-2xl md:text-[40px] font-normal hover:underline">Home</a>
           <a href="#services" className="text-white text-2xl md:text-[40px] font-normal hover:underline">Services</a>
           <a href="#case-studies" className="text-white text-2xl md:text-[40px] font-normal hover:underline">Case Studies</a>
-          <a href="#contact" className="text-white text-2xl md:text-[40px] font-normal hover:underline">Let’s Talk</a>
+          <a href="#compliance" className="text-white text-2xl md:text-[40px] font-normal hover:underline">Compliance</a>
+          <a href="#contact" className="text-white text-2xl md:text-[40px] font-normal hover:underline">Let's Talk</a>
         </nav>
       </div>
     </footer>

@@ -12,9 +12,9 @@ const Partners = () => {
         <Image
           src="/partners.png"
           alt="Partners"
-          width={600}
-          height={120}
-          className="w-auto h-20 md:h-28 object-contain"
+          width={800}
+          height={220}
+          className="w-auto h-20 md:h-34 object-contain"
           priority
           unoptimized={true}
         />

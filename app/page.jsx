@@ -5,6 +5,7 @@ import Partners from "@/components/Partners";
 import Services from "@/components/Services";
 import CaseStudies from "@/components/CaseStudies";
 import ContactUs from "@/components/ContactUs";
+import Compliance from "@/components/Compliance";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
     <Partners />
     <Services />
     <CaseStudies />
+    <Compliance />
     <ContactUs />
     <Footer />
   </div>

@@ -25,6 +25,24 @@ const services = [
       "From storage to structure to strategy, we deliver data management solutions built for clarity, compliance, and control.",
     image: "/service4.png",
   },
+  {
+    title: "Hardware Deployemnt & Delivery",
+    description:
+      "Seamless sourcing, setup, and deployment of reliable hardware solutions tailored to your operational needs.",
+    image: "/service5.jpeg",
+  },
+  {
+    title: "Quality Management, Systems Audit and Implementation.",
+    description:
+      "Assess, improve, and implement efficient quality management systems that support compliance and operational excellence.",
+    image: "/service6.jpeg",
+  },
+  {
+    title: "Cybersecurity and IT Solutions",
+    description:
+      "Protect your business infrastructure with secure, scalable IT systems and proactive cybersecurity solutions.",
+    image: "/service7.jpeg",
+  },
 ];
 
 const Services = () => {

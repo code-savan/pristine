@@ -20,7 +20,7 @@ const caseStudies = [
 
 const CaseStudies = () => {
   return (
-    <section className="w-full py-16 md:py-24 bg-white">
+    <section className="w-full py-16 md:py-24 bg-white" id="case-studies">
       <div className="w-full max-w-none px-0">
         <h2 className="text-center text-zinc-900 text-3xl md:text-4xl font-medium mb-2">
           Case Studies<br />/ Work

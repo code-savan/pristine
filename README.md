@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pristine Tech
+
+Corporate website for Pristine Tech — delivering high-quality, future-forward digital solutions.
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org) 15.3.5 with App Router
+- **React**: 19.0.0
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) v4
+- **Font**: [Geist](https://vercel.com/font) (Vercel's font family)
+- **Email**: [Resend](https://resend.com) API for contact form
+- **Notifications**: [Sonner](https://sonner.emilkowal.ski) toast notifications
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+├── api/contact/route.js    # Contact form API endpoint
+├── layout.jsx              # Root layout with fonts & Toaster
+├── page.jsx                # Homepage composition
+└── globals.css             # Global styles & Tailwind
 
-## Learn More
+components/
+├── Hero.jsx                # Landing hero section
+├── Partners.jsx            # Partner logos
+├── Services.jsx            # 4 service cards
+├── CaseStudies.jsx         # Horizontal scrolling case studies
+├── ContactUs.jsx           # Contact form
+└── Footer.jsx              # Site footer
 
-To learn more about Next.js, take a look at the following resources:
+public/                     # Static assets (images)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Generate static export:
 
-## Deploy on Vercel
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Output is in `dist/` (configured for static export).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Environment Variables
+
+The contact form requires a Resend API key. Set in `app/api/contact/route.js` or use environment variables:
+
+```bash
+RESEND_API_KEY=your_api_key
+```
+
+## Deployment
+
+Configured for static export. Deploy the `dist/` folder to any static hosting service.
